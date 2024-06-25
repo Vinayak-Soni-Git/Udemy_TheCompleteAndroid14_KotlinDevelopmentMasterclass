@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclass</string>
+    <string name="title_activity_unit_converter_app">UnitConverterApp</string>
+    <string name="title_activity_shopping_list_app">ShoppingListApp</string>
+</resources>
