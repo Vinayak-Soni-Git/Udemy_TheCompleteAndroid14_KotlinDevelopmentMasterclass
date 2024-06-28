@@ -2,4 +2,6 @@
     <string name="app_name">Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclass</string>
     <string name="title_activity_unit_converter_app">UnitConverterApp</string>
     <string name="title_activity_shopping_list_app">ShoppingListApp</string>
+    <string name="title_activity_mvvmcounter_app">MVVMCounterApp</string>
+    <string name="title_activity_recipe_app">RecipeApp</string>
 </resources>
