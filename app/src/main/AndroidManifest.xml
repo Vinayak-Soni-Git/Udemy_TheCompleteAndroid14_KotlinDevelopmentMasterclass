@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,27 @@
         android:theme="@style/Theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclass"
         tools:targetApi="31">
         <activity
-            android:name=".recipeapp.RecipeApp"
+            android:name=".wishlistapp.MainWishListApp"
+            android:exported="false"
+            android:label="@string/title_activity_main_wish_list_app"
+            android:theme="@style/Theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclass" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value=""></meta-data>
+
+        <activity
+            android:name=".locationapp.MainLocationApp"
+            android:exported="false"
+            android:label="@string/title_activity_main_location_app"
+            android:theme="@style/Theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclass" />
+        <activity
+            android:name=".navigation.NavigationApp"
+            android:exported="false"
+            android:label="@string/title_activity_navigation_app"
+            android:theme="@style/Theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclass" />
+        <activity
+            android:name=".recipeapp.MainRecipeApp"
             android:exported="false"
             android:label="@string/title_activity_recipe_app"
             android:theme="@style/Theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclass" />

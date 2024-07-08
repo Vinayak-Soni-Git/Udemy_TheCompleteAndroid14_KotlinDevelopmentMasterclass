@@ -4,4 +4,7 @@
     <string name="title_activity_shopping_list_app">ShoppingListApp</string>
     <string name="title_activity_mvvmcounter_app">MVVMCounterApp</string>
     <string name="title_activity_recipe_app">RecipeApp</string>
+    <string name="title_activity_navigation_app">NavigationApp</string>
+    <string name="title_activity_main_location_app">MainLocationApp</string>
+    <string name="title_activity_main_wish_list_app">MainWishListApp</string>
 </resources>

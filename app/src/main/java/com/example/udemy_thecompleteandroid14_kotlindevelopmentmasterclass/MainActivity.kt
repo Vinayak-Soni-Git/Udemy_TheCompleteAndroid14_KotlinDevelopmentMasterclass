@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -25,11 +24,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.locationapp.MainLocationApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.mvvmarchitecture.MVVMCounterApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.recipeapp.RecipeApp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.navigation.NavigationApp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.recipeapp.MainRecipeApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.shoppinglistapp.ShoppingListApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.unitconverterapp.UnitConverterApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.unitconverterapp.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.wishlistapp.MainWishListApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,6 +72,7 @@ fun SetButtons(){
         ) {
             Text(text = "Unit Converter App", fontSize = 14.sp)
         }
+        
         Spacer(modifier = Modifier.height(5.dp))
         Button(onClick = {
             val openShoppingListApp = Intent(context, ShoppingListApp::class.java)
@@ -78,6 +81,7 @@ fun SetButtons(){
         ) {
             Text(text = "Shopping List App", fontSize = 14.sp)
         }
+        
         Spacer(modifier = Modifier.height(5.dp))
         Button(onClick = {
             val openShoppingListApp = Intent(context, MVVMCounterApp::class.java)
@@ -86,12 +90,37 @@ fun SetButtons(){
         ) {
             Text(text = "MVVM Counter App", fontSize = 14.sp)
         }
+        
         Spacer(modifier = Modifier.height(5.dp))
         Button(onClick = {
-            val openRecipeApp = Intent(context, RecipeApp::class.java)
-            context.startActivity(openRecipeApp)
+            val openMainRecipeApp = Intent(context, MainRecipeApp::class.java)
+            context.startActivity(openMainRecipeApp)
         }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Recipe App", fontSize = 14.sp)
+        }
+        
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = {
+            val openNavigationApp = Intent(context, NavigationApp::class.java)
+            context.startActivity(openNavigationApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Navigation App", fontSize = 14.sp)
+        }
+        
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = { 
+            val openLocationApp = Intent(context, MainLocationApp::class.java)
+            context.startActivity(openLocationApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Location App", fontSize = 14.sp)
+        }
+        
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = { 
+            val openWishListApp = Intent(context, MainWishListApp::class.java)
+            context.startActivity(openWishListApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "WishList App", fontSize = 14.sp)
         }
     }
 }

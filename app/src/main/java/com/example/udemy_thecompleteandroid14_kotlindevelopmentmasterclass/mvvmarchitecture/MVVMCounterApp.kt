@@ -21,7 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.mvvmarchitecture.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
 
 class MVVMCounterApp : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

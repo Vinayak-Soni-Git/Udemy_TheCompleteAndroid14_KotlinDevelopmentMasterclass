@@ -36,7 +36,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.unitconverterapp.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
 import kotlin.math.roundToInt
 
 class UnitConverterApp : ComponentActivity() {

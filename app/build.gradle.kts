@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
 }
 
 android {
@@ -63,11 +65,28 @@ dependencies {
     
     // Retrofit
     implementation(libs.retrofit)
+    
     // Json to kotlin object mapping
     implementation(libs.converter.gson)
     
     // Image Loading
     implementation(libs.coil.compose)
+    
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+    
+    // Google Location
+    implementation(libs.play.services.location)
+    implementation(libs.play.services.maps)
+    implementation(libs.maps.compose)
+    
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
+    
+    // Compose Material
+    implementation(libs.androidx.material)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
