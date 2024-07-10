@@ -1,8 +1,18 @@
 package com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.wishlistapp
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "wishes")
 data class Wish(
+    @PrimaryKey(autoGenerate = true)
     val id:Long = 0L,
+    
+    @ColumnInfo("title")
     val title:String = "",
+    
+    @ColumnInfo("description")
     val description:String = ""
 )
 

@@ -7,4 +7,5 @@
     <string name="title_activity_navigation_app">NavigationApp</string>
     <string name="title_activity_main_location_app">MainLocationApp</string>
     <string name="title_activity_main_wish_list_app">MainWishListApp</string>
+    <string name="title_activity_main_music_app">MainMusicApp</string>
 </resources>

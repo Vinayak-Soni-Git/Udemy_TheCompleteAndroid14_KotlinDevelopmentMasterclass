@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.locationapp.MainLocationApp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.musicapp.MainMusicApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.mvvmarchitecture.MVVMCounterApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.navigation.NavigationApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.recipeapp.MainRecipeApp
@@ -121,6 +122,14 @@ fun SetButtons(){
             context.startActivity(openWishListApp)
         }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
             Text(text = "WishList App", fontSize = 14.sp)
+        }
+        
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = {
+            val openMusicApp = Intent(context, MainMusicApp::class.java)
+            context.startActivity(openMusicApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Music App", fontSize = 14.sp)
         }
     }
 }
