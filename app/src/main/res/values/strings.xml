@@ -8,4 +8,18 @@
     <string name="title_activity_main_location_app">MainLocationApp</string>
     <string name="title_activity_main_wish_list_app">MainWishListApp</string>
     <string name="title_activity_main_music_app">MainMusicApp</string>
+    <string name="quiz_app">Quiz App</string>
+    <string name="quiz_app_dash">Quiz App!</string>
+    <string name="welcome">Welcome</string>
+    <string name="please_enter_your_name">Please enter your name.</string>
+    <string name="e_g_john">e.g. John</string>
+    <string name="start">Start</string>
+    <string name="what_country_does_this_flag_belongs_to">What country does this flag belongs to?</string>
+    <string name="quiz_image">Quiz Image</string>
+    <string name="apple">Apple</string>
+    <string name="submit">Submit</string>
+    <string name="finish">FINISH</string>
+    <string name="result">Result</string>
+    <string name="image">image</string>
+    <string name="hey_congratulations">Hey, Congratulations!</string>
 </resources>

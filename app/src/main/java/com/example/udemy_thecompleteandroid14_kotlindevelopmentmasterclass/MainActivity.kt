@@ -28,6 +28,7 @@ import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.locat
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.musicapp.MainMusicApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.mvvmarchitecture.MVVMCounterApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.navigation.NavigationApp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.quizapp.MainQuizActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.recipeapp.MainRecipeApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.shoppinglistapp.ShoppingListApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.unitconverterapp.UnitConverterApp
@@ -130,6 +131,14 @@ fun SetButtons(){
             context.startActivity(openMusicApp)
         }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Music App", fontSize = 14.sp)
+        }
+        
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = { 
+            val openQuizApp = Intent(context, MainQuizActivity::class.java)
+            context.startActivity(openQuizApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Quiz App", fontSize = 14.sp)
         }
     }
 }
