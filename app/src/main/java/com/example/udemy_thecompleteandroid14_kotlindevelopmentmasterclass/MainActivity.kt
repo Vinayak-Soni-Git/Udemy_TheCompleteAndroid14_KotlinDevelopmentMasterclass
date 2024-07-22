@@ -24,6 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.drawingapp.MainDrawingActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.locationapp.MainLocationApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.musicapp.MainMusicApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.mvvmarchitecture.MVVMCounterApp
@@ -139,6 +140,14 @@ fun SetButtons(){
             context.startActivity(openQuizApp)
         }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Quiz App", fontSize = 14.sp)
+        }
+        
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = {
+            val openDrawingApp = Intent(context, MainDrawingActivity::class.java)
+            context.startActivity(openDrawingApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Drawing App", fontSize = 14.sp)
         }
     }
 }
