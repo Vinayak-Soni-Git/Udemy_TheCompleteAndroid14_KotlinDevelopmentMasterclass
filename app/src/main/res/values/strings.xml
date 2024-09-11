@@ -22,4 +22,11 @@
     <string name="result">Result</string>
     <string name="image">image</string>
     <string name="hey_congratulations">Hey, Congratulations!</string>
+    <string name="please_wait">Please Wait...</string>
+    <string name="startCapital">START</string>
+    <string name="get_ready_for">GET READY FOR</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="your_bmi">YOUR BMI</string>
+    <string name="height_in_cm">Height (In cm)</string>
+    <string name="weight_in_kg">Weight (In kg)</string>
 </resources>

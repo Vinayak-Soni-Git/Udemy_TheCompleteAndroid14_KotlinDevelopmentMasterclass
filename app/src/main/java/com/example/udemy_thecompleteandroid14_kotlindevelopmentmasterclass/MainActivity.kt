@@ -31,10 +31,12 @@ import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.mvvma
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.navigation.NavigationApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.quizapp.MainQuizActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.recipeapp.MainRecipeApp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.roomdemo.MainRoomDemoActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.shoppinglistapp.ShoppingListApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.unitconverterapp.UnitConverterApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.wishlistapp.MainWishListApp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.workoutapp.Main7MinuteWorkoutActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -148,6 +150,20 @@ fun SetButtons(){
             context.startActivity(openDrawingApp)
         }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Drawing App", fontSize = 14.sp)
+        }
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = {
+            val open7MinuteWorkoutApp = Intent(context, Main7MinuteWorkoutActivity::class.java)
+            context.startActivity(open7MinuteWorkoutApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "7 Minute Workout App")
+        }
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = {
+            val openRoomDemoApp = Intent(context, MainRoomDemoActivity::class.java)
+            context.startActivity(openRoomDemoApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Room Demo App")
         }
     }
 }

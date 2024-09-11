@@ -6,30 +6,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".drawingapp.MainDrawingActivity">
-    
-    
-    <com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.drawingapp.DrawingView
-        android:id="@+id/mainDrawingView"
+
+    <FrameLayout
+        android:id="@+id/fl_drawing_view_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="5dp"
+        android:padding="1dp"
         android:background="@drawable/background_drawing_view_layout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/ll_paint_colors"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-        
-    </com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.drawingapp.DrawingView>
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop">
+
+        </ImageView>
+
+        <com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.drawingapp.DrawingView
+            android:id="@+id/mainDrawingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="#80FFFFFF">
+
+        </com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.drawingapp.DrawingView>
+
+    </FrameLayout>
     
+
     <LinearLayout
         android:id="@+id/ll_paint_colors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/ib_brush"
+        app:layout_constraintBottom_toTopOf="@id/ll_action_buttons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainDrawingView">
+        app:layout_constraintTop_toBottomOf="@id/fl_drawing_view_container">
 
         <ImageButton
             android:layout_width="25dp"
@@ -37,7 +55,8 @@
             android:layout_margin="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/pallet_normal"
-            android:tag="skin"
+            android:tag="@color/skin"
+            android:onClick="paintClicked"
             android:background="@color/skin">
         </ImageButton>
 
@@ -47,7 +66,8 @@
             android:layout_margin="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/pallet_normal"
-            android:tag="black"
+            android:tag="@color/black"
+            android:onClick="paintClicked"
             android:background="@color/black">
         </ImageButton>
 
@@ -57,7 +77,8 @@
             android:layout_margin="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/pallet_normal"
-            android:tag="red"
+            android:tag="@color/red"
+            android:onClick="paintClicked"
             android:background="@color/red">
         </ImageButton>
 
@@ -67,7 +88,8 @@
             android:layout_margin="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/pallet_normal"
-            android:tag="yellow"
+            android:tag="@color/yellow"
+            android:onClick="paintClicked"
             android:background="@color/yellow">
         </ImageButton>
 
@@ -77,7 +99,8 @@
             android:layout_margin="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/pallet_normal"
-            android:tag="green"
+            android:tag="@color/green"
+            android:onClick="paintClicked"
             android:background="@color/green">
         </ImageButton>
 
@@ -87,7 +110,8 @@
             android:layout_margin="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/pallet_normal"
-            android:tag="blue"
+            android:tag="@color/blue"
+            android:onClick="paintClicked"
             android:background="@color/blue">
         </ImageButton>
 
@@ -97,7 +121,8 @@
             android:layout_margin="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/pallet_normal"
-            android:tag="lollipop"
+            android:tag="@color/lollipop"
+            android:onClick="paintClicked"
             android:background="@color/lollipop">
         </ImageButton>
         <ImageButton
@@ -106,25 +131,63 @@
             android:layout_margin="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/pallet_normal"
-            android:tag="random"
+            android:tag="@color/random"
+            android:onClick="paintClicked"
             android:background="@color/random">
         </ImageButton>
 
     </LinearLayout>
-    
-    <ImageButton
-        android:id="@+id/ib_brush"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:src="@drawable/ic_brush"
-        android:scaleType="fitXY"
+
+    <LinearLayout
+        android:id="@+id/ll_action_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/ll_paint_colors"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
-    </ImageButton>
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/ib_gallery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_gallery"
+            android:scaleType="fitXY">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/ib_undo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_undo"
+            android:scaleType="fitXY">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/ib_brush"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_brush"
+            android:scaleType="fitXY">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/ib_save"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_save"
+            android:scaleType="fitXY">
+        </ImageButton>
+
+    </LinearLayout>
+    
+
     
 
 </androidx.constraintlayout.widget.ConstraintLayout>
