@@ -93,6 +93,12 @@ dependencies {
     // Compose Material
     implementation(libs.androidx.material)
     
+    // Gson
+    implementation(libs.gson)
+    
+    // Dexter
+    implementation(libs.dexter)
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

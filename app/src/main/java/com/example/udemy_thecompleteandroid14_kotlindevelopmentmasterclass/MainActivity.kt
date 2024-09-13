@@ -24,6 +24,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ageinminutescalculator.MainAgeCalculatorActivity
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.calculatorapp.MainCalculatorActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.drawingapp.MainDrawingActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.locationapp.MainLocationApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.musicapp.MainMusicApp
@@ -35,6 +37,7 @@ import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.roomd
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.shoppinglistapp.ShoppingListApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.unitconverterapp.UnitConverterApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.weatherapp.MainWeatherAppActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.wishlistapp.MainWishListApp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.workoutapp.Main7MinuteWorkoutActivity
 
@@ -165,6 +168,21 @@ fun SetButtons(){
         }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Room Demo App")
         }
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = {
+            val openWeatherApp = Intent(context, MainWeatherAppActivity::class.java)
+            context.startActivity(openWeatherApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Weather App")
+        }
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = {
+            val openMainActivity2 = Intent(context, MainActivity2::class.java)
+            context.startActivity(openMainActivity2)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Main Activity 2")
+        }
+        
     }
 }
 

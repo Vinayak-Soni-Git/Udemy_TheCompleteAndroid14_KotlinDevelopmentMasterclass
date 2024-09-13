@@ -29,4 +29,6 @@
     <string name="your_bmi">YOUR BMI</string>
     <string name="height_in_cm">Height (In cm)</string>
     <string name="weight_in_kg">Weight (In kg)</string>
+    <string name="milesPerHour">Miles/Hour</string>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>
