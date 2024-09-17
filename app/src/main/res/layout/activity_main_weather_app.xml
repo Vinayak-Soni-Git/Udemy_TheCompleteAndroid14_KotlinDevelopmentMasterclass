@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/main_screen_content_background_color"
     android:orientation="vertical"
-    android:padding="@dimen/main_screen_content_padding"
+    android:padding="@dimen/main_screen_content_padding_trello"
     tools:context=".weatherapp.MainWeatherAppActivity">
 
     <LinearLayout
@@ -21,8 +21,8 @@
             android:layout_marginEnd="@dimen/card_view_marginStartEnd"
             android:layout_weight="1"
             android:background="@android:color/white"
-            app:cardCornerRadius="@dimen/card_view_corner_radius"
-            app:cardElevation="@dimen/card_view_elevation">
+            app:cardCornerRadius="@dimen/card_view_corner_radius_trello"
+            app:cardElevation="@dimen/card_view_elevation_trello">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -72,8 +72,8 @@
             android:layout_marginEnd="@dimen/card_view_marginStartEnd"
             android:layout_weight="1"
             android:background="@android:color/white"
-            app:cardCornerRadius="@dimen/card_view_corner_radius"
-            app:cardElevation="@dimen/card_view_elevation">
+            app:cardCornerRadius="@dimen/card_view_corner_radius_trello"
+            app:cardElevation="@dimen/card_view_elevation_trello">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,8 +131,8 @@
             android:layout_marginEnd="@dimen/card_view_marginStartEnd"
             android:layout_weight="1"
             android:background="@android:color/white"
-            app:cardCornerRadius="@dimen/card_view_corner_radius"
-            app:cardElevation="@dimen/card_view_elevation">
+            app:cardCornerRadius="@dimen/card_view_corner_radius_trello"
+            app:cardElevation="@dimen/card_view_elevation_trello">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -182,8 +182,8 @@
             android:layout_marginEnd="@dimen/card_view_marginStartEnd"
             android:layout_weight="1"
             android:background="@android:color/white"
-            app:cardCornerRadius="@dimen/card_view_corner_radius"
-            app:cardElevation="@dimen/card_view_elevation">
+            app:cardCornerRadius="@dimen/card_view_corner_radius_trello"
+            app:cardElevation="@dimen/card_view_elevation_trello">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -234,8 +234,8 @@
         android:layout_marginTop="@dimen/card_view_marginTop"
         android:layout_marginEnd="@dimen/card_view_marginStartEnd"
         android:background="@android:color/white"
-        app:cardCornerRadius="@dimen/card_view_corner_radius"
-        app:cardElevation="@dimen/card_view_elevation">
+        app:cardCornerRadius="@dimen/card_view_corner_radius_trello"
+        app:cardElevation="@dimen/card_view_elevation_trello">
 
         <LinearLayout
             android:layout_width="match_parent"

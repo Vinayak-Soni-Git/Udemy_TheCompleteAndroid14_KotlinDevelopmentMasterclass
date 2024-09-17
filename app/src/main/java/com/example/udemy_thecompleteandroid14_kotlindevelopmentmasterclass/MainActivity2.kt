@@ -4,19 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,20 +26,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ageinminutescalculator.MainAgeCalculatorActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.calculatorapp.MainCalculatorActivity
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.drawingapp.MainDrawingActivity
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.locationapp.MainLocationApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.musicapp.MainMusicApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.mvvmarchitecture.MVVMCounterApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.navigation.NavigationApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.quizapp.MainQuizActivity
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.recipeapp.MainRecipeApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.roomdemo.MainRoomDemoActivity
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.shoppinglistapp.ShoppingListApp
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.SplashScreenActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.unitconverterapp.UnitConverterApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.weatherapp.MainWeatherAppActivity
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.wishlistapp.MainWishListApp
-import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.workoutapp.Main7MinuteWorkoutActivity
+
 
 class MainActivity2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,6 +77,13 @@ fun SetButtonsForMainActivity2(){
             context.startActivity(openAgeInMinutesApp)
         }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Age In Minutes Calculator")
+        }
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = { 
+            val openTrelloApp = Intent(context, SplashScreenActivity::class.java)
+            context.startActivity(openTrelloApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Trello App")
         }
     }
 }

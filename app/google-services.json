@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "574269761334",
+    "project_id": "udemyandroid14trello",
+    "storage_bucket": "udemyandroid14trello.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574269761334:android:85483ddb85a36e1f8ab597",
+        "android_client_info": {
+          "package_name": "com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574269761334-omm2u9aegt60otiosmgim6ce4904q7t3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass",
+            "certificate_hash": "8ef389c24815652688d77a7907ff3d6f644f2c6e"
+          }
+        },
+        {
+          "client_id": "574269761334-fi66s42sf2dng3g8fariu5k6g1uiorva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWSuCpco6WsqnVGiJKJWW0i1L9p1mDfK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574269761334-fi66s42sf2dng3g8fariu5k6g1uiorva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

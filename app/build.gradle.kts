@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-parcelize")
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -93,11 +94,31 @@ dependencies {
     // Compose Material
     implementation(libs.androidx.material)
     
+    // Material
+    implementation(libs.material.v110)
+    
     // Gson
     implementation(libs.gson)
     
     // Dexter
     implementation(libs.dexter)
+    
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.messaging)
+
+    // CircleImageView
+    implementation(libs.circleimageview)
+    
+    // Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+    
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
