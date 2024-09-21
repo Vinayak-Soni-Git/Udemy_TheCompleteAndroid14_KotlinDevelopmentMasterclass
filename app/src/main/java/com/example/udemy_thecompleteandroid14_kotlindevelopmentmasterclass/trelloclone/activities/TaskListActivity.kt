@@ -22,7 +22,7 @@ class TaskListActivity : BaseActivity() {
     private lateinit var mBoardDetails:Board
     private lateinit var binding:ActivityTaskListBinding
     private lateinit var mBoardDocumentId:String
-    private lateinit var mAssignedMemberDetailList:ArrayList<User>
+    lateinit var mAssignedMemberDetailList:ArrayList<User>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTaskListBinding.inflate(layoutInflater)
@@ -73,13 +73,7 @@ class TaskListActivity : BaseActivity() {
         hideProgressDialog()
         setupActionBar()
         
-        val addTaskList = Task(resources.getString(R.string.add_list))
-        board.taskList.add(addTaskList)
-        binding.rvTaskList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false)
-        binding.rvTaskList.setHasFixedSize(true)
         
-        val adapter = TaskListItemsAdapter(this, board.taskList)
-        binding.rvTaskList.adapter = adapter
         
         showProgressDialog(resources.getString(R.string.please_wait))
         FireStoreClass().getAssignedMembersListDetails(this, mBoardDetails.assignedTo)
@@ -150,6 +144,21 @@ class TaskListActivity : BaseActivity() {
     fun boardMembersDetailsList(list:ArrayList<User>){
         mAssignedMemberDetailList = list
         hideProgressDialog()
+
+        val addTaskList = Task(resources.getString(R.string.add_list))
+        mBoardDetails.taskList.add(addTaskList)
+        binding.rvTaskList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false)
+        binding.rvTaskList.setHasFixedSize(true)
+
+        val adapter = TaskListItemsAdapter(this, mBoardDetails.taskList)
+        binding.rvTaskList.adapter = adapter
+    }
+    
+    fun updateCardsInTaskList(taskListPosition:Int, cards:ArrayList<Card>){
+        mBoardDetails.taskList.removeAt(mBoardDetails.taskList.size - 1)
+        mBoardDetails.taskList[taskListPosition].cards = cards
+        showProgressDialog(resources.getString(R.string.please_wait))
+        FireStoreClass().addUpdateTaskList(this, mBoardDetails)
     }
     
     companion object{
