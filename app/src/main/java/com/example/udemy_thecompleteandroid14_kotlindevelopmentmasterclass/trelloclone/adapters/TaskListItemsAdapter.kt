@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.R
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.TaskListActivity
@@ -83,6 +84,38 @@ open class TaskListItemsAdapter(private val context:Context, private var list:Ar
             holder.ibDeleteList.setOnClickListener{
                 alertDialogForDeleteList(position, model.title)
             }
+            holder.tvAddCard.setOnClickListener{
+                holder.tvAddCard.visibility = View.GONE
+                holder.cvAddCard.visibility = View.VISIBLE
+            }
+            holder.ibCloseCardName.setOnClickListener{
+                holder.tvAddCard.visibility = View.VISIBLE
+                holder.cvAddCard.visibility = View.GONE 
+            }
+            holder.ibDoneCardName.setOnClickListener{
+                val cardName = holder.etCardName.text.toString()
+                if (cardName.isNotEmpty()){
+                    if(context is TaskListActivity){
+                        context.addCardToTaskList(position, cardName)
+                    }
+                }else{
+                    Toast.makeText(context, "Please Enter A Card Name.", Toast.LENGTH_SHORT).show()
+                }
+            }
+            holder.rvCardList.layoutManager = LinearLayoutManager(context)
+            holder.rvCardList.setHasFixedSize(true)
+            val adapter = CardListItemAdapter(context, model.cards)
+            holder.rvCardList.adapter = adapter
+            
+            adapter.setOnClickListener(object:CardListItemAdapter.OnClickListener{
+                override fun onClick(cardPosition: Int) {
+                    if(context is TaskListActivity){
+                        context.cardDetails(position, cardPosition)
+                    }
+                }
+            })
+            
+            
         }
     }
     private fun alertDialogForDeleteList(position: Int, title: String) {
@@ -125,6 +158,13 @@ open class TaskListItemsAdapter(private val context:Context, private var list:Ar
         val ibCloseEditableView:ImageButton = view.findViewById(R.id.ib_close_editable_view)
         val ibDoneEditListName:ImageButton = view.findViewById(R.id.ib_done_edit_list_name)
         val ibDeleteList:ImageButton = view.findViewById(R.id.ib_delete_list)
+        val tvAddCard:TextView = view.findViewById(R.id.tv_add_card)
+        val cvAddCard:CardView = view.findViewById(R.id.cv_add_card)
+        val ibCloseCardName:ImageButton = view.findViewById(R.id.ib_close_card_name)
+        val ibDoneCardName:ImageButton = view.findViewById(R.id.ib_done_card_name)
+        val etCardName:EditText = view.findViewById(R.id.et_card_name)
+        val rvCardList:RecyclerView = view.findViewById(R.id.rv_card_list)
+        
     }
 
 }

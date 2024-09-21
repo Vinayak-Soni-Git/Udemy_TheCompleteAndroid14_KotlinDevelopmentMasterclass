@@ -3,8 +3,10 @@ package com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trel
 import android.app.Activity
 import android.util.Log
 import android.widget.Toast
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.CardDetailsActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.CreateBoardActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.MainTrelloActivity
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.MembersActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.ProfileActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.SignInActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.SignUpActivity
@@ -77,7 +79,7 @@ class FireStoreClass {
                 Log.e(activity.javaClass.simpleName, "Error while creating the board", exception)
             }
     }
-    fun addUpdateTaskList(activity:TaskListActivity, board:Board){
+    fun addUpdateTaskList(activity:Activity, board:Board){
         val taskListHashMap = HashMap<String, Any>()
         taskListHashMap[Constants.TASK_LIST] = board.taskList
         
@@ -86,8 +88,17 @@ class FireStoreClass {
             .update(taskListHashMap)
             .addOnSuccessListener { 
                 Log.e(activity.javaClass.simpleName, "TaskList updated successfully.")
-                activity.addUpdateTaskListSuccess()
+                if(activity is TaskListActivity){
+                    activity.addUpdateTaskListSuccess()
+                }else if(activity is CardDetailsActivity){
+                    activity.addUpdateTaskListSuccess()
+                }
             }.addOnFailureListener{exception ->
+                if(activity is TaskListActivity){
+                    activity.hideProgressDialog()
+                }else if(activity is CardDetailsActivity){
+                    activity.hideProgressDialog()
+                }
                 Log.e(activity.javaClass.simpleName, "Error while creating a board.", exception)
             }
     }
@@ -134,6 +145,65 @@ class FireStoreClass {
                 }
                 
                 Log.e(activity.javaClass.simpleName, "Error $e")
+            }
+    }
+    
+    fun getAssignedMembersListDetails(activity:Activity, assignedTo:ArrayList<String>){
+        mFireStore.collection(Constants.USERS)
+            .whereIn(Constants.ID, assignedTo)
+            .get()
+            .addOnSuccessListener { document->
+                Log.e(activity.javaClass.simpleName, document.documents.toString())
+                val userList:ArrayList<User> = ArrayList()
+                for(i in document.documents){
+                    val user = i.toObject(User::class.java)!!
+                    userList.add(user)
+                }
+                if(activity is MembersActivity){
+                    activity.setupMembersList(userList)
+                }else if(activity is TaskListActivity){
+                    activity.boardMembersDetailsList(userList)
+                }
+            }.addOnFailureListener{exception->
+                if(activity is MembersActivity){
+                    activity.hideProgressDialog()
+                }else if(activity is TaskListActivity){
+                    activity.hideProgressDialog()
+                }
+                
+                Log.e(activity.javaClass.simpleName, "Error while creating a board.", exception)
+            }
+    }
+    
+    fun getMemberDetails(activity: MembersActivity, email:String){
+        mFireStore.collection(Constants.USERS)
+            .whereEqualTo(Constants.EMAIL, email)
+            .get()
+            .addOnSuccessListener {document->
+                if(document.documents.size > 0){
+                    val user = document.documents[0].toObject(User::class.java)!!
+                    activity.memberDetails(user)
+                }else{
+                    activity.hideProgressDialog()
+                    activity.showErrorSnackBar("No such member found")
+                }
+            }.addOnFailureListener{exception->
+                activity.hideProgressDialog()
+                Log.e(activity.javaClass.simpleName, "Error while getting user details",exception)
+            }
+    }
+    
+    fun assignMemberToBoard(activity: MembersActivity, board: Board, user: User){
+        val assignedToHashMap = HashMap<String, Any>()
+        assignedToHashMap[Constants.ASSIGNED_TO] = board.assignedTo
+        mFireStore.collection(Constants.BOARDS)
+            .document(board.documentId)
+            .update(assignedToHashMap)
+            .addOnSuccessListener { 
+                activity.memberAssignedSuccess(user)
+            }.addOnFailureListener{exception->
+                activity.hideProgressDialog()
+                Log.e(activity.javaClass.simpleName, "Error while creating a board.", exception)
             }
     }
     

@@ -17,7 +17,15 @@ object Constants {
     const val BOARDS:String = "boards"
     const val DOCUMENT_ID:String = "documentId"
     const val TASK_LIST:String = "taskList"
-
+    const val BOARD_DETAILS:String = "boardDetail"
+    const val ID:String = "id"
+    const val EMAIL:String = "email"
+    const val TASK_LIST_ITEM_POSITION:String = "taskListItemPosition"
+    const val CARD_LIST_ITEM_POSITION:String = "cardListItemPosition"
+    const val BOARD_MEMBERS_LIST:String = "boardMembersList"
+    const val SELECT:String = "select"
+    const val UN_SELECT:String = "unSelect"
+    
     fun showImageChooser(activity:Activity){
         val galleyIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         activity.startActivityForResult(galleyIntent, PICK_IMAGE_REQUEST_CODE)
