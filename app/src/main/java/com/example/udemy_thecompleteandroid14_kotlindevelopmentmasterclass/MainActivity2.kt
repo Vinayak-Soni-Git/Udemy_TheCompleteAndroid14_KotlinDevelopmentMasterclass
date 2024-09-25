@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ageinminutescalculator.MainAgeCalculatorActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.calculatorapp.MainCalculatorActivity
+import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.happyplaceapp.activities.MainHappyPlaceActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.trelloclone.activities.SplashScreenActivity
 import com.example.udemy_thecompleteandroid14_kotlindevelopmentmasterclass.ui.theme.Udemy_TheCompleteAndroid14_KotlinDevelopmentMasterclassTheme
 
@@ -84,6 +85,13 @@ fun SetButtonsForMainActivity2(){
             context.startActivity(openTrelloApp)
         }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Trello App")
+        }
+        Spacer(modifier = Modifier.height(5.dp))
+        Button(onClick = {
+            val openHappyPlaceApp = Intent(context, MainHappyPlaceActivity::class.java)
+            context.startActivity(openHappyPlaceApp)
+        }, colors = buttonColors, shape = buttonShape, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Happy Place App")
         }
     }
 }

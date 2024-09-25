@@ -38,4 +38,18 @@
     <color name="task_list_action_color">#F7F6FA</color>
     <color name="task_list_title_view_bg_color">#F8F8F8</color>
 
+
+    <color name="happyPlaceColorPrimary">#4b86b4</color>
+    <color name="happyPlaceColorPrimaryDark">#2a4d69</color>
+    <color name="happyPlaceColorAccent">#adcbe3</color>
+
+    <color name="happyPlacePrimaryTextColor">#212121</color>
+    <color name="happyPlaceSecondaryTextColor">#9AA2AF</color>
+    <color name="happyPlaceButtonBackgroundColor">#63ace5</color>
+
+    <color name="happyPlaceCircularImageBorderColor">#757575</color>
+    <color name="happyPlaceItemHappyPlaceDescriptionTextColor">#606060</color>
+
+    <color name="happyPlaceDetailScreenDescriptionTextColor">#757575</color>
+
 </resources>

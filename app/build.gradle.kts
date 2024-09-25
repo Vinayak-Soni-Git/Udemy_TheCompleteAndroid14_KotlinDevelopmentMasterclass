@@ -119,6 +119,10 @@ dependencies {
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
     
+    //Google Places
+    implementation(libs.play.services.maps)
+    implementation(libs.places)
+    
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
